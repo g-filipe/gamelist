@@ -7,14 +7,10 @@ import lombok.*;
 @Getter
 public class GameMinDTO {
 
-//  @Id
-//  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-//  @Column(name = "game_year")
     private Integer year;
     private String imgUrl;
-//  @Column(columnDefinition = "TEXT")
     private String shortDescription;
 
     public GameMinDTO(Game entity) {

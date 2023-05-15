@@ -1,10 +1,12 @@
 package com.gfilipeprojects.gamelist.services;
 
+import com.gfilipeprojects.gamelist.dto.GameDTO;
 import com.gfilipeprojects.gamelist.dto.GameMinDTO;
 import com.gfilipeprojects.gamelist.entities.Game;
 import com.gfilipeprojects.gamelist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,6 +16,16 @@ public class GameService {
     //Injeção de uma instância do GameRepository no GameService
     @Autowired
     private GameRepository gameRepository;
+
+    @Transactional(readOnly = true)
+    public GameDTO findGameById(Long gameId) {
+        Game result = gameRepository.findById(gameId).get();
+        GameDTO gameDTO = new GameDTO(result);
+
+        return gameDTO;
+    }
+
+    @Transactional(readOnly = true)
     public List<GameMinDTO> findAllGames() {
         List<Game> result = gameRepository.findAll();
 
