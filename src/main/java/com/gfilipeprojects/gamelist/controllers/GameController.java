@@ -18,7 +18,7 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @GetMapping(value = "/{gameId}")
+    @GetMapping(value = "/{id}")
     public GameDTO findGameById(@PathVariable Long gameId) {
         GameDTO result = gameService.findGameById(gameId);
         return result;
