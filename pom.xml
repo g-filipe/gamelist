@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gfilipeprojects</groupId>
-	<artifactId>listgame</artifactId>
+	<artifactId>gamelist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>listgame</name>
 	<description>Game list project using java springboot</description>
